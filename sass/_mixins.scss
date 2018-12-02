@@ -1,0 +1,67 @@
+@mixin header-nav-a($fontsize, $border, $padding, $lineheight, $flexbasis: auto, $minheight: 0, $borderleft: none){
+        text-align: center;
+        text-decoration: none;
+        color: $darkgrey;    
+        font-size: $fontsize;
+        letter-spacing: 0.25rem;
+        border: $border; 
+        border-bottom: none;
+        padding:$padding;
+        line-height: $lineheight;
+        background-color: #fff;
+        flex-basis: $flexbasis;
+        min-height: $minheight;
+        border-left: $borderleft;
+}
+@mixin header-nav($padding: 2rem 0, $flexdirection: row, $justifycontent: space-around, $alignitems: center){
+        flex-direction: $flexdirection;
+        justify-content: $justifycontent;
+        align-items: $alignitems;
+        width: 100%;
+        padding: $padding;
+        background-color: #fff;
+        display:flex;
+}
+@mixin wm($width, $margin: 0 auto){
+    width: $width;
+    margin: $margin;
+} 
+@mixin header-h1($color, $display, $float, $fontsize, $lineheight, $float2, $textalign, $letterspacing: normal){
+        width: 100%;
+        padding: 0 2rem;
+        color: $color;
+        letter-spacing: 0.1rem;
+        i.fa-lg{
+            display:$display;
+            width: 25%;
+            float:$float;
+            font-size: $fontsize;
+            line-height: $lineheight;
+            color: $color;
+            vertical-align: baseline;
+            span{
+                float: $float2;
+                width: 75%;
+                font-size: 3.998rem;
+                padding-left: 1rem;
+                text-align: $textalign;
+                letter-spacing: $letterspacing;
+            }
+        }
+}
+@mixin row($flexwrap, $justifycontent){
+        flex-wrap: $flexwrap;
+        flex-direction: row;
+        justify-content: $justifycontent;
+        align-items: flex-start;
+} 
+@mixin col($flexbasis){
+        flex-basis: $flexbasis;
+        flex-grow: 1;
+        flex-shrink: 0;
+}
+@mixin break ($length){
+    @media (min-width: $length){
+        @content;
+    }
+}
